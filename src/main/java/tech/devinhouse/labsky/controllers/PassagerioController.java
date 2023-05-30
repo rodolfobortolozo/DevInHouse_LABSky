@@ -32,4 +32,11 @@ public class PassagerioController {
 
   }
 
+  @GetMapping(path = "/{cpf}")
+  public ResponseEntity<PassagerioRes> getByCpf(@PathVariable(name = "cpf") String cpf){
+    Passageiro newPassageiro = passageiroService.getByCpf(cpf);
+
+    return ResponseEntity.status(HttpStatus.OK).body(ObjectMapperUtils.map(newPassageiro, PassagerioRes.class));
+
+  }
 }
