@@ -23,4 +23,13 @@ public class PassageiroService {
     return passagerioRepository.findAll();
   }
 
+  public Passageiro getByCpf(String cpf){
+    Optional<Passageiro> opPassageiro = passagerioRepository.findById(cpf);
+
+    if(opPassageiro.isPresent()){
+      return opPassageiro.get();
+    }
+
+    throw new PassagerioNotFoundException("Cpf não encontrado");
+  }
 }
