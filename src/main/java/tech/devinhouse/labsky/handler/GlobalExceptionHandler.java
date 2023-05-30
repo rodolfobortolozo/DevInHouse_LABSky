@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import tech.devinhouse.labsky.exceptions.PassagerioConflitException;
-import tech.devinhouse.labsky.exceptions.PassagerioNotFoundException;
+import tech.devinhouse.labsky.exceptions.*;
 
 import java.text.ParseException;
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-  @ExceptionHandler({ParseException.class})
+  @ExceptionHandler({PassagerioException.class, AssentoException.class})
   public ResponseEntity handleException(Exception ex){
 
     HttpStatus codigo = HttpStatus.BAD_REQUEST;
@@ -27,7 +26,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     return ResponseEntity.status(codigo).body(error);
   }
 
-  @ExceptionHandler({PassagerioNotFoundException.class})
+  @ExceptionHandler({PassagerioNotFoundException.class, AssentoNotFoundException.class})
   public ResponseEntity handleNotFoundException(Exception ex){
 
     HttpStatus codigo = HttpStatus.NOT_FOUND;
@@ -35,7 +34,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     return ResponseEntity.status(codigo).body(error);
   }
 
-  @ExceptionHandler({PassagerioConflitException.class})
+  @ExceptionHandler({PassagerioConflitException.class, AssentoConflitException.class})
   public ResponseEntity handleUnauthorizedException(Exception ex){
 
     HttpStatus codigo = HttpStatus.CONFLICT;
