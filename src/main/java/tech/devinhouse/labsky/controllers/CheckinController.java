@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.devinhouse.labsky.mappers.ObjectMapperUtils;
-import tech.devinhouse.labsky.models.Assento;
-import tech.devinhouse.labsky.models.Checkin;
-import tech.devinhouse.labsky.models.Passageiro;
 import tech.devinhouse.labsky.models.dto.CheckinReq;
 import tech.devinhouse.labsky.models.dto.CheckinRes;
 import tech.devinhouse.labsky.services.AssentoService;
@@ -21,13 +18,11 @@ import tech.devinhouse.labsky.services.PassageiroService;
 public class CheckinController {
 
     private final PassageiroService passageiroService;
-    private final AssentoService assentoService;
 
     private final CheckinService checkinService;
 
     public CheckinController(PassageiroService passageiroService, AssentoService assentoService, CheckinService checkinService) {
         this.passageiroService = passageiroService;
-        this.assentoService = assentoService;
         this.checkinService = checkinService;
     }
 

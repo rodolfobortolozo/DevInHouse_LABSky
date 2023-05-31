@@ -70,4 +70,8 @@ public class CheckinService {
 
         return newCheckin;
     }
+
+    public Checkin findByCpf(String cpf){
+        return this.checkinRepository.findByPassageiroCpf(cpf);
+    }
 }
