@@ -1,6 +1,5 @@
 package tech.devinhouse.labsky.controllers;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.devinhouse.labsky.mappers.ObjectMapperUtils;
 import tech.devinhouse.labsky.models.Passageiro;
 import tech.devinhouse.labsky.models.dto.PassagerioRes;
+import tech.devinhouse.labsky.models.dto.PassagerioResChekin;
 import tech.devinhouse.labsky.services.PassageiroService;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class PassagerioController {
   }
 
   @GetMapping
-  public ResponseEntity<List<PassagerioRes>> getAll(){
+  public ResponseEntity<List<PassagerioResChekin>> getAll(){
 
      return ResponseEntity.status(HttpStatus.OK).body(passageiroService.getAll());
 

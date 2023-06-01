@@ -15,6 +15,10 @@ import java.time.LocalDate;
 public class Assento {
 
   @Id
+  @Column(name = "IDASSENTO")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long Id;
+
   @Column(name = "NROASSENTO")
   private String nroAssento;
 

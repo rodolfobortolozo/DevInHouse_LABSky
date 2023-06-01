@@ -15,6 +15,10 @@ import java.time.LocalDate;
 public class Passageiro {
 
   @Id
+  @Column(name = "IDPASSAGEIRO")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
   @Column(name = "CPF")
   private String cpf;
 
@@ -31,4 +35,7 @@ public class Passageiro {
   @Column(name = "MINHAS")
   private Integer milhas;
 
+  public int atualizaMilhas(){
+    return this.milhas += this.classificacao.getPontos();
+  }
 }

@@ -12,16 +12,20 @@ import java.util.UUID;
 public class Checkin {
 
     @Id
+    @Column(name = "IDCHECHIN")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "ETICKET")
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID eticket;
 
     @ManyToOne
-    @JoinColumn(name = "CPF")
+    @JoinColumn(name = "IDPASSAGEIRO")
     private Passageiro passageiro;
 
     @ManyToOne
-    @JoinColumn(name = "NROASSENTO")
+    @JoinColumn(name = "IDASSENTO")
     private Assento assento;
 
     @Column(name = "MALASDESPACHADAS")
