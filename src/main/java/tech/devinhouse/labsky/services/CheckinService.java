@@ -2,6 +2,7 @@ package tech.devinhouse.labsky.services;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import tech.devinhouse.labsky.exceptions.AssentoConflitException;
 import tech.devinhouse.labsky.exceptions.AssentoException;
 import tech.devinhouse.labsky.exceptions.PassagerioNotFoundException;
 import tech.devinhouse.labsky.models.Assento;
@@ -83,7 +84,7 @@ public class CheckinService {
     public void assentoDisponivel(Assento assento){
         log.info("Valida se assento está ocupado...");
         if(!assento.isDisponivel()){
-            throw new PassagerioNotFoundException("Assento não disponível.");
+            throw new AssentoConflitException("Assento não disponível.");
         }
     }
 
@@ -100,10 +101,6 @@ public class CheckinService {
         if(assento.isSaidaEmergencia() & !malaDespachada ) {
             throw new AssentoException("Saída de emergência despache a mala.");
         }
-    }
-
-    public int atualizaPontuacao(Passageiro passageiro){
-        return passageiro.getMilhas() + passageiro.getClassificacao().getPontos();
     }
 
 }
