@@ -35,7 +35,7 @@ public class Passageiro {
   @Column(name = "MINHAS")
   private Integer milhas;
 
-  public int atualizaMilhas(){
-    return this.milhas += this.classificacao.getPontos();
+  public void atualizaMilhas(){
+    this.milhas += this.classificacao.getPontos();
   }
 }
