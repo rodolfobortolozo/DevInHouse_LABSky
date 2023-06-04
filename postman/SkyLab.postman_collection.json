@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "4142ebc6-bbea-4fe5-b50f-bc43a1b07c16",
+		"name": "SkyLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22531782"
+	},
+	"item": [
+		{
+			"name": "Buscar Todos Passageiros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/passageiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"passageiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Efetuar Checkin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"cpf\": \"000.000.000-00\",\r\n    \"assento\": \"5A\",\r\n    \"malasDespachadas\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/passageiros/confirmacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"passageiros",
+						"confirmacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todos Assentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/assentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"assentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar Cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/passageiros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"passageiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

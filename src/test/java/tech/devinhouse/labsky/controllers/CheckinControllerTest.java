@@ -58,7 +58,7 @@ class CheckinControllerTest {
 
   @Test
   @DisplayName("3- Quando assento estiver ocupado, deve retornar uma exception ")
-  void assento_ocupado() throws Exception {
+  void assentoOcupado() throws Exception {
 
     CheckinReq checkinReq = new CheckinReq("111.111.111-11","10F",true);
 
@@ -73,7 +73,7 @@ class CheckinControllerTest {
 
   @Test
   @DisplayName("4- Quando passageiro for menor de idade e assento for de emergencia, deve retornar uma exception ")
-  void passageiro_menor_idade_assento_emergencia() throws Exception {
+  void passageiroMenorDeIdadeNoAssentoDeEmergencia() throws Exception {
 
     CheckinReq checkinReq = new CheckinReq("000.000.000-09","5C",false);
 
@@ -88,7 +88,7 @@ class CheckinControllerTest {
 
   @Test
   @DisplayName("5- Quando assento for de emergência e o passageiro tentar despachar a mala, deve retornar uma exception ")
-  void assento_emergencia_despacha_mala() throws Exception {
+  void AssentoDeEmergenciaDespachaMala() throws Exception {
 
     CheckinReq checkinReq = new CheckinReq("333.333.333-33","5B",false);
 
@@ -104,7 +104,7 @@ class CheckinControllerTest {
 
   @Test
   @DisplayName("6 - Salvar Checkin e gerar Checkin")
-  void salvar_chekin() throws Exception {
+  void salvarChekin() throws Exception {
 
     CheckinReq checkinReq = new CheckinReq("555.555.555-55","1B",false);
 
