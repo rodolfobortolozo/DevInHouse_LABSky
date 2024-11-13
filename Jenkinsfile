@@ -48,7 +48,7 @@ pipeline{
         
         stage("Qualidade do Código"){
             steps{
-                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Sky_lab -Dsonar.host.url=http://172.18.0.2:9000 -Dsonar.login=sqp_d4f25d500467eeec8cc38180462bf8fc14ff28ab"
+                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Sky_lab -Dsonar.host.url=http://172.18.0.2:9000 -Dsonar.login=sqa_ecf516e91318f582b3c58ea3fb46c089dbddaebd"
             }
         }
         
